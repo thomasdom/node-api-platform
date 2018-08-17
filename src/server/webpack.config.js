@@ -11,6 +11,5 @@ try {
     externals: [nodeExternals()]
   };
 } catch (error) {
-  // eslint-disable-line no-console
   module.exports = {};
 }
