@@ -1,2 +1,3 @@
-exports.initWebpackDashboad = require('server/initWebpackDashboard');
-exports.initSwaggerHapi = require('server/initSwaggerHapi');
+exports.initWebpackDashboad = require('./server/initWebpackDashboard');
+exports.initSwaggerHapi = require('./server/initSwaggerHapi');
+exports.loadRoutes = require('./server/loadRoutes');
