@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+
 const glob = require('glob');
 const get = require('lodash.get');
 
@@ -11,7 +13,7 @@ const get = require('lodash.get');
 module.exports = (server, cwd, routePattern) => {
   glob(routePattern, { cwd }, (er, files) => {
     files.forEach(file => {
-      const routes = require(`${cwd}/${file}`);
+      const routes = require(`${cwd}/${file}`); // eslint-disable-line import/no-dynamic-require
       const mappedRoutes = routes.map(route => {
         const handledRoute = Object.assign({}, route);
         const handlerDefinition = get(route, 'options.handler');
@@ -25,7 +27,7 @@ module.exports = (server, cwd, routePattern) => {
             const handlers = handlerDefinition.split(':');
             const handlerName = handlers[0];
             const methodName = handlers[1];
-            const Handler = require(`${cwd}/handler/${handlerName}`);
+            const Handler = require(`${cwd}/handler/${handlerName}`); // eslint-disable-line import/no-dynamic-require
             const myHandler = new Handler();
 
             if (typeof myHandler[methodName] !== 'function') {
@@ -34,11 +36,12 @@ module.exports = (server, cwd, routePattern) => {
 
             handledRoute.options.handler = (req, h) => myHandler[methodName](req, h);
           } catch (error) {
+            // eslint-disable-next-line no-console
             console.log(
               `${'Handler definition must either be a method or ' +
-              'a string referecing a class method such as MyHandler:myMethod' +
-              '(where MyHandler is the default exports of the app/handler/MyHandler.js file.' +
-              `\nRoute file: ${file}\n`}${error}`
+                'a string referecing a class method such as MyHandler:myMethod' +
+                '(where MyHandler is the default exports of the app/handler/MyHandler.js file.' +
+                `\nRoute file: ${file}\n`}${error}`
             );
             process.exit(-1);
           }

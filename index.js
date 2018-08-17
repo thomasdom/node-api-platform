@@ -1,9 +1,9 @@
 // Server
-exports.initWebpackDashboad = require('./server/initWebpackDashboard');
-exports.initSwaggerHapi = require('./server/initSwaggerHapi');
-exports.loadRoutes = require('./server/loadRoutes');
-exports.environments = require('./server/environments');
+exports.initWebpackDashboad = require('./src/server/initWebpackDashboard');
+exports.initSwaggerHapi = require('./src/server/initSwaggerHapi');
+exports.loadRoutes = require('./src/server/loadRoutes');
+exports.environments = require('./src/server/environments');
 
 // JsonApi
-exports.jsonApiConstants = require('./jsonapi/constants');
-exports.jsonApiJoiFormatter = require('./jsonapi/joiFormatter');
+exports.jsonApiConstants = require('./src/jsonapi/constants');
+exports.jsonApiJoiFormatter = require('./src/jsonapi/joiFormatter');
