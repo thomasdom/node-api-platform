@@ -7,3 +7,4 @@ exports.environments = require('./src/server/environments');
 // JsonApi
 exports.jsonApiConstants = require('./src/jsonapi/constants');
 exports.jsonApiJoiFormatter = require('./src/jsonapi/joiFormatter');
+exports.addQueryParams = require('./src/jsonapi/addQueryParams');

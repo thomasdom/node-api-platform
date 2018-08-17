@@ -53,6 +53,8 @@ const {
 
 `jsonApiJoiFormatter` helps you format your hapi-routes validation according to the jsonapi spec
 
+`addQueryParams` formats a route with query params
+
 
 ## Contributing
 

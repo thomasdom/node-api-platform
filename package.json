@@ -26,7 +26,8 @@
     "glob": "^7.1.2",
     "hapi-routes": "^5.0.0",
     "joi": "^13.6.0",
-    "lodash.get": "^4.4.2"
+    "lodash.get": "^4.4.2",
+    "qs": "^6.5.2"
   },
   "devDependencies": {
     "eslint": "^5.3.0",

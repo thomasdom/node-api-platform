@@ -6,7 +6,7 @@ try {
   module.exports = {
     context: `${__dirname}/app`,
     mode: 'development',
-    entry: '../../../../app/server.js',
+    entry: '../../../../../app/server.js',
     target: 'node',
     externals: [nodeExternals()]
   };
