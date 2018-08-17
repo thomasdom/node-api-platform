@@ -7,11 +7,14 @@
   "author": "Romain Richard <bigzounet@hotmail.com>",
   "license": "All Rights Reserved",
   "private": true,
-  "devDependencies": {
+  "peerDependencies": {
+    "inert": "^5.1.0",
+    "vision": "^5.3.3",
     "webpack": "^4.16.5",
     "webpack-dashboard": "^2.0.0",
     "webpack-dev-middleware": "^3.1.3",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "hapi-swagger": "^9.1.1"
   },
   "dependencies": {
     "glob": "^7.1.2",
