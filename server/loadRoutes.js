@@ -1,10 +1,17 @@
 const glob = require('glob');
 const get = require('lodash.get');
 
+/**
+ * Register routes and their Handlers in the Hapi server.
+ *
+ * @param server Hapi server
+ * @param cwd Current Working Directory
+ * @param routePattern Where to look for the route files (glob pattern)
+ */
 module.exports = (server, cwd, routePattern) => {
   glob(routePattern, { cwd }, (er, files) => {
     files.forEach(file => {
-      const routes = require(`./${file}`);
+      const routes = require(`${cwd}/${file}`);
       const mappedRoutes = routes.map(route => {
         const handledRoute = Object.assign({}, route);
         const handlerDefinition = get(route, 'options.handler');
@@ -18,7 +25,7 @@ module.exports = (server, cwd, routePattern) => {
             const handlers = handlerDefinition.split(':');
             const handlerName = handlers[0];
             const methodName = handlers[1];
-            const Handler = require(`./handler/${handlerName}`);
+            const Handler = require(`${cwd}/handler/${handlerName}`);
             const myHandler = new Handler();
 
             if (typeof myHandler[methodName] !== 'function') {

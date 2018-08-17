@@ -4,6 +4,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const defaultConfig = require('./webpack.config.js');
 
 /**
+ * Adds a webpack middleware to the server to use webpack-dashboard in dev mode.
  *
  * @param server Hapi server
  * @param config Webpack config

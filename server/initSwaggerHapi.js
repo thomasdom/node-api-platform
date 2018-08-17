@@ -2,6 +2,14 @@ const HapiSwagger = require('hapi-swagger');
 const Inert = require('inert');
 const Vision = require('vision');
 
+/**
+ * Register the swagger-hapi plugin in the server.
+ *
+ * @param server Hapi server
+ * @param customOptions Options for swagger-hapi
+ *
+ * @returns server
+ */
 module.exports = (server, customOptions = {}) => {
   const options = Object.assign(
     {},
@@ -13,7 +21,7 @@ module.exports = (server, customOptions = {}) => {
     customOptions
   );
 
-  server.register([
+  return server.register([
     Inert,
     Vision,
     {
