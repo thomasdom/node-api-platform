@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "glob": "^7.1.2",
+    "hapi-routes": "^5.0.0",
     "lodash.get": "^4.4.2"
   }
 }
