@@ -11,7 +11,8 @@ const Joi = require('joi');
 const formatEntity = (attributes, name) =>
   Joi.object()
     .keys({
-      id: Joi.number(),
+      id: Joi.number().required(),
+      type: Joi.string(),
       attributes: Joi.object(attributes).label(`${name}Attributes`)
     })
     .label(name);
@@ -27,6 +28,7 @@ const formatEntity = (attributes, name) =>
 const formatResource = (data, name) =>
   Joi.object()
     .keys({ data })
+    .required()
     .label(`JsonApi${name}Container`);
 
 /**
