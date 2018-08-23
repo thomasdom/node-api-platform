@@ -12,7 +12,7 @@ yarn add node-api-platform
 
 #### Server
 
-`initWebpackDashboad` adds a wepack dashboard to your hapi server
+`initWebpackDashboard` adds a wepack dashboard to your hapi server
 
 `initSwaggerHapi` adds a swagger-ui to your hapi server
 
@@ -26,7 +26,7 @@ Here is a fully-fledged usage example:
 ```
 const Hapi = require('hapi');
 const {
-  initWebpackDashboad,
+  initWebpackDashboard,
   initSwaggerHapi,
   loadRoutes,
   environments
