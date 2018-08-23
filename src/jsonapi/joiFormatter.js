@@ -13,6 +13,7 @@ const formatEntity = (attributes, name) =>
     .keys({
       id: Joi.number().required(),
       type: Joi.string(),
+      links: Joi.object(),
       attributes: Joi.object(attributes).label(`${name}Attributes`)
     })
     .label(name);

@@ -1,5 +1,5 @@
 // Server
-exports.initWebpackDashboad = require('./src/server/initWebpackDashboard');
+exports.initWebpackDashboard = require('./src/server/initWebpackDashboard');
 exports.initSwaggerHapi = require('./src/server/initSwaggerHapi');
 exports.loadRoutes = require('./src/server/loadRoutes');
 exports.environments = require('./src/server/environments');
