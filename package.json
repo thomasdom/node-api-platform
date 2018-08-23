@@ -1,9 +1,9 @@
 {
   "name": "node-api-platform",
   "version": "1.0.0",
-  "description": "Provide usefull tools for jsonapi gateways using hapi",
+  "description": "Provide useful tools for jsonapi gateways using hapi",
   "main": "index.js",
-  "repository": "git@lab.wdg.cloud:sodexo-wt/node-api-platform.git",
+  "repository": "https://github.com/wizardstechnologies/node-api-platform",
   "author": "Romain Richard <bigzounet@hotmail.com>",
   "license": "All Rights Reserved",
   "private": true,
