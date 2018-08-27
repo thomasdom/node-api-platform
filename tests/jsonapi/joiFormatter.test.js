@@ -32,7 +32,12 @@ describe('json api route validation formatter', () => {
       'test'
     );
     const validationSuccess = Joi.validate(
-      { data: [{ test: '1' }, { test2: '1' }], meta: { test: 1}, links: [{ test: 1 }], included: [{ test: 1 }] },
+      {
+        data: [{ test: '1' }, { test2: '1' }],
+        meta: { test: 1 },
+        links: [{ test: 1 }],
+        included: [{ test: 1 }]
+      },
       testResource
     );
     const validationFail = Joi.validate([{ test: '1' }, { test2: '1' }], testResource);

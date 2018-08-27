@@ -28,7 +28,7 @@ const formatEntity = (attributes, name) =>
  */
 const formatResource = (data, name) =>
   Joi.object()
-    .keys({ data: data, links: Joi.array(), included: Joi.array(), meta: Joi.object() })
+    .keys({ data, links: Joi.array(), included: Joi.array(), meta: Joi.object() })
     .required()
     .label(`JsonApi${name}Container`);
 
