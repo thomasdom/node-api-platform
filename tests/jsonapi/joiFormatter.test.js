@@ -31,7 +31,10 @@ describe('json api route validation formatter', () => {
       Joi.object().keys({ test: Joi.string(), test2: Joi.string() }),
       'test'
     );
-    const validationSuccess = Joi.validate({ data: [{ test: '1' }, { test2: '1' }] }, testResource);
+    const validationSuccess = Joi.validate(
+      { data: [{ test: '1' }, { test2: '1' }], meta: { test: 1}, links: [{ test: 1 }], included: [{ test: 1 }] },
+      testResource
+    );
     const validationFail = Joi.validate([{ test: '1' }, { test2: '1' }], testResource);
 
     expect(validationSuccess.error).toEqual(null);
