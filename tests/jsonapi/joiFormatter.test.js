@@ -35,7 +35,7 @@ describe('json api route validation formatter', () => {
       {
         data: [{ test: '1' }, { test2: '1' }],
         meta: { test: 1 },
-        links: [{ test: 1 }],
+        links: { test: 1 },
         included: [{ test: 1 }]
       },
       testResource
