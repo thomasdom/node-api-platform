@@ -5,7 +5,11 @@ describe('json api route validation formatter', () => {
   it('formats entities', async () => {
     const testEntity = jsonapi.formatEntity({ test: Joi.string(), test2: Joi.number() }, 'test');
     const validationSuccess = Joi.validate(
-      { id: 1, attributes: { test: 'test', test2: 42 } },
+      {
+        id: 1,
+        attributes: { test: 'test', test2: 42 },
+        relationships: { test3: { data: [{ id: 1, type: 'test3' }, { id: 1, type: 'test4' }] } }
+      },
       testEntity
     );
     const validationFail = Joi.validate(

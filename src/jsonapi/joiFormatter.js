@@ -14,7 +14,8 @@ const formatEntity = (attributes, name) =>
       id: Joi.number().required(),
       type: Joi.string(),
       links: Joi.object(),
-      attributes: Joi.object(attributes).label(`${name}Attributes`)
+      attributes: Joi.object(attributes).label(`${name}Attributes`),
+      relationships: Joi.object()
     })
     .label(name);
 
